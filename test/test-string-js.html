@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Validation string</title>
+</head>
+<body>
+  <input type="text" id="myInput" placeholder="Tape un mot de passe...">
+  <p id="result"></p>
+
+  <script>
+    const input = document.getElementById("myInput");
+    const result = document.getElementById("result");
+
+    input.addEventListener("input", function() {
+      const value = input.value;
+
+      const hasNumber = /\d/.test(value);              // au moins un chiffre
+      const hasUppercase = /[A-Z]/.test(value);        // au moins une majuscule
+      const hasSpecial = /[^A-Za-z0-9]/.test(value);   // au moins un caractère spécial
+
+      let feedback = [];
+      if (hasNumber) feedback.push("✔ contient un chiffre");
+      else feedback.push("❌ pas de chiffre");
+
+      if (hasUppercase) feedback.push("✔ contient une majuscule");
+      else feedback.push("❌ pas de majuscule");
+
+      if (hasSpecial) feedback.push("✔ contient un caractère spécial");
+      else feedback.push("❌ pas de caractère spécial");
+
+      result.innerHTML = feedback.join("<br>");
+    });
+  </script>
+</body>
+</html>

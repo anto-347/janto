@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Checkbox avec Font Awesome</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    input[type="checkbox"] {
+      display: none; /* on cache la checkbox */
+    }
+
+    label {
+      font-size: 2rem;
+      cursor: pointer;
+      color: #444;
+    }
+
+    /* Icône quand pas coché */
+    input[type="checkbox"] + label .fa-eye {
+      display: inline;
+    }
+
+    input[type="checkbox"] + label .fa-eye-slash {
+      display: none;
+    }
+
+    /* Icône quand coché */
+    input[type="checkbox"]:checked + label .fa-eye {
+      display: none;
+    }
+
+    input[type="checkbox"]:checked + label .fa-eye-slash {
+      display: inline;
+    }
+  </style>
+</head>
+<body>
+  <input type="checkbox" id="check1">
+  <label for="check1">
+    <i class="fa-solid fa-eye"></i>
+    <i class="fa-solid fa-eye-slash"></i>
+  </label>
+</body>
+</html>

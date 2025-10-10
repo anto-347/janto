@@ -1,0 +1,320 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+input {
+    font-family: 'Poppins', sans-serif;
+}
+
+html {
+    --var-bg-color: #d8d8d8;
+    --var-bleu: #FFFAFF;
+    --var-jaune: #DE8787;
+    --var-text-color: #1c1c1c;
+    --var-text-color-hover: #000000;
+    --var-gris: #2c2c2c;
+    --var-gris-clair: #919191;
+    --var-gris-tres-clair: #C2C2C2;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+    color: var(--var-text-color);
+}
+
+main {
+    background-color: var(--var-bleu);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    padding: 3rem;
+}
+
+section {
+    width: 100%;
+    height: 95vh;
+    padding: 3rem;
+    background-color: var(--var-bg-color);
+    border-radius: 25px;
+    box-shadow: 5px 5px 4px var(--var-gris);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row;
+    overflow: hidden;
+}
+
+.logo-div {
+    width: 40%;
+    background-color: var(--var-bg-color);
+    transition: 0.3s;
+    z-index: 1;
+    
+}
+
+.logo-div img {
+    width: 100%;
+    height: 100%;
+    border-radius: 15px;
+    filter: drop-shadow(10px 10px 4px black);
+}
+
+.box-form {
+    width: 60%;
+    height: calc(100vh - 5rem);
+    background-color: var(--var-bg-color);
+    border: 3px var(--var-jaune) solid;
+    border-radius: 25px;
+    overflow: hidden;
+    display: grid;
+    place-items: center;
+    transition: 0.3s;
+    z-index: 0;
+}
+
+.box-form.left {
+    transform: translateX(calc(calc(0.4 * var(--var-width-sec)) * -1));
+
+}
+
+.logo-div.right {
+    transform: translateX(calc(0.6 * var(--var-width-sec)));
+
+}
+
+.box-btn {
+    display: flex;
+    margin-top: 4rem;
+    background-color: var(--var-bg-color);
+    border-radius: 25px;
+    box-shadow: inset 8px 8px 15px #bebebe, inset -8px -8px 15px #ffffff;
+    overflow: auto;
+    padding: 0.4rem
+}
+
+.box-btn button {
+    border: none;
+    font-weight: 500;
+    font-size: 20px;
+    border-radius: 25px;
+    padding: 0.7rem 1.2rem;
+    cursor: pointer;
+    background-color: transparent;
+    transition: 0.4s;
+}
+
+.box-btn button:hover {
+    background-color: var(--var-gris-tres-clair);
+}
+
+.btn-i.active, .btn-c.active {
+    border: none;
+    backdrop-filter: blur(5px);
+    background-color: rgba(255, 255, 255, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    color: black;
+    -webkit-backdrop-filter: blur(5px);
+}
+
+.btn-c.active:hover, .btn-i.active:hover {
+    border: none;
+    backdrop-filter: blur(5px);
+    background-color: rgba(255, 255, 255, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    color: black;
+    -webkit-backdrop-filter: blur(5px);
+}
+
+.form-i {
+    width: 60%;
+    height: fit-content;
+    margin: 5rem;
+    border: 1px black solid;
+    border-radius: 15px;
+    display: grid;
+    grid-gap: 4rem;
+    transform: translateX(-300%);
+    overflow: 0;
+    transition: 0.3s;
+    place-items: center;
+    padding: 2rem;
+    background-color: var(--var-bleu);
+}
+
+.form-c {
+    width: 60%;
+    height: fit-content;
+    margin: 5rem;
+    border: 1px black solid;
+    border-radius: 15px;
+    grid-gap: 4rem;
+    transform: translate(300%, -135%);
+    overflow: 0;
+    transition: 0.3s;
+    padding: 2rem;
+    background-color: var(--var-bleu);
+}
+
+.div-c {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.form-i.active {
+    transform: translateX(0%);
+}
+
+.form-c.active {
+    transform: translate(50%, -135%);
+}
+
+.div-input {
+    position: relative;
+    display: grid;
+}
+
+.form-i h4 {
+    text-align: center;
+}
+
+.div-input input {
+    font-family: "Poppins", sans-serif;
+    padding: 0.5rem 0.7rem;
+    border-radius: 20px;
+    border: 1px var(--var-gris) solid;
+    width: 18rem;
+    height: 3rem;
+}
+
+.form-i label {
+    background: #fff;
+    position: absolute;
+    top: 50%;
+    left: 15px;
+    padding: 0px 5px;
+    font-size: 12px;
+    transition: 0.3s ease, color 0.3s ease, scale 0.3s ease;
+    transform: translateY(-50%);
+}
+
+.form-i input:focus + label, .form-i input:not(:placeholder-shown) + label{
+    top: -5px;
+    left: -1px;
+    color: var(--var-jaune);
+    transform: scale(0.9);
+}
+
+.form-i input:focus, .form-i input:not(:placeholder-shown) {
+    border: 1px var(--var-jaune) solid;
+    outline: var(--var-jaune);
+}
+
+.form-i button {
+    background-color: var(--var-jaune);
+    color: #fff;
+    border: none;
+    padding: 0.7rem 1rem;
+    border-radius: 0.6rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: 0.2s;
+    font-size: 16px;
+}
+
+#infos-sup {
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+}
+
+#tick-aperçu {
+    display: none;
+}
+
+#tick-aperçu + label {
+    position: absolute;
+    top: 1.5rem;
+    right: 10px;
+}
+
+.lbl-aperçu {
+    font-size: 15px;
+    cursor: pointer;
+    color: var(--var-gris);
+}
+
+#tick-aperçu + .lbl-aperçu .fa-eye {
+    display: inline;
+}
+
+#tick-aperçu + .lbl-aperçu .fa-eye-slash {
+    display: none;
+}
+
+#tick-aperçu:checked + .lbl-aperçu .fa-eye {
+    display: none;
+}
+
+#tick-aperçu:checked + .lbl-aperçu .fa-eye-slash {
+    display: inline;
+}
+
+.form-c .lbl {
+    background: #fff;
+    position: absolute;
+    top: 1.5rem;
+    left: 15px;
+    padding: 0px 5px;
+    font-size: 12px;
+    transition: 0.3s ease, color 0.3s ease, scale 0.3s ease;
+    transform: translateY(-50%);
+}
+
+.form-c .ipt:focus + label, .form-c .ipt:not(:placeholder-shown) + label {
+    top: -5px;
+    left: -1px;
+    color: var(--var-jaune);
+    transform: scale(0.85);
+}
+
+.form-c .ipt:focus, .form-c .ipt:not(:placeholder-shown) {
+    border: 1px var(--var-jaune) solid;
+    outline: none;
+}
+
+.form-c h4, .form-c .ipt {
+    margin-bottom: 2rem;
+}
+
+.div-check {
+    display: flex;
+}
+
+.div-check input {
+    margin-right: 0.5rem;
+}
+
+.form-c button {
+    margin-top: 2rem;
+    border: none;
+    background-color: var(--var-jaune);
+    color: #fff;
+    padding: 0.7rem 1rem;
+    border-radius: 0.6rem;
+    font-weight: 500;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+#p-co {
+    margin: 2rem;
+    color: red;
+}

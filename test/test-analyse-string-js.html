@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Input en temps réel</title>
+</head>
+<body>
+  <input type="text" id="myInput" placeholder="Tape quelque chose...">
+  <p>Tu écris : <span id="output"></span></p>
+
+  <script>
+    const input = document.getElementById("myInput");
+    const output = document.getElementById("output");
+
+    // on écoute les changements en temps réel
+    input.addEventListener("input", function() {
+      output.textContent = input.value;
+    });
+  </script>
+</body>
+</html>

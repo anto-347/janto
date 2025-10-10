@@ -1,0 +1,118 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    --var-bg-color: #d8d8d8;
+    --var-bleu: #FFFAFF;
+    --var-jaune: #DE8787;
+    --var-text-color: #1c1c1c;
+    --var-text-color-hover: #000000;
+    --var-gris: #2c2c2c;
+    --var-gris-clair: #919191;
+    --var-gris-tres-clair: #C2C2C2;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+}
+
+main {
+    background-color: var(--var-bleu);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    flex-direction: row;
+    padding: 3rem;
+}
+
+.box-form {
+    width: 100%;
+    height: 100%;
+    background-color: var(--var-bg-color);
+    border-radius: 25px;
+    position: relative;
+    padding: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 5px 5px 4px var(--var-gris);
+}
+
+form {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 80%;
+    border: 3px var(--var-jaune) solid;
+    border-radius: 25px;
+    padding: 2rem;
+    width: 60%;
+}
+
+input {
+    font-family: "Poppins", sans-serif;
+    padding: 0.5rem 0.7rem;
+    border-radius: 15px;
+    border: 1px var(--var-gris) solid;
+    margin-bottom: 1rem;
+    width: 18rem;
+    height: 3rem;
+}
+
+#mdpi2 {
+    margin-top: 2rem;
+}
+
+p {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 15px;
+
+}
+
+.result1_r {
+    color: red;
+}
+
+.result1_g {
+    color: green;
+}
+
+.same_mdp.g {
+    color: green;
+}
+
+.same_mdp.r {
+    color: red;
+}
+
+button {
+    margin-top: 2rem;
+    border: none;
+    padding: 0.7rem 1rem;
+    background-color: var(--var-gris);
+    color: #fff;
+    border-radius: 0.6rem;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+img {
+    width: 40%;
+    filter: drop-shadow(10px 10px 4px black);
+}
+
+.mdp-1-div, .mdp-2-div {
+    position: relative;
+}
+

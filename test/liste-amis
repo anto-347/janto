@@ -1,0 +1,87 @@
+Yes exactement gros, tu gardes ta table `users` (ou `utilisateurs`) pour stocker les infos de base de chaque utilisateur (nom, email, photo de profil, etc.), et tu ajoutes **une nouvelle table** uniquement pour gérer les **relations d’amis** entre eux.
+
+---
+
+## 📐 Schéma logique
+
+### 1. Table `users` (déjà existante)
+
+```sql
+CREATE TABLE users (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nom VARCHAR(100),
+    email VARCHAR(255),
+    photo_profil VARCHAR(255)
+);
+```
+
+### 2. Table `amis` (nouvelle)
+
+```sql
+CREATE TABLE amis (
+    utilisateur_id INT,
+    ami_id INT,
+    date_ajout DATETIME DEFAULT CURRENT_TIMESTAMP,
+    PRIMARY KEY (utilisateur_id, ami_id),
+    FOREIGN KEY (utilisateur_id) REFERENCES users(id) ON DELETE CASCADE,
+    FOREIGN KEY (ami_id) REFERENCES users(id) ON DELETE CASCADE
+);
+```
+
+---
+
+## 🔁 Réciprocité (important)
+
+Tu as deux options :
+
+| Méthode              | Détails                                                                                                                 |
+| -------------------- | ----------------------------------------------------------------------------------------------------------------------- |
+| 🔄 **Double entrée** | Tu insères **deux lignes** (1, 2) et (2, 1) pour chaque relation.                                                       |
+| ➡️ **Simple entrée** | Tu insères **une seule ligne** (1, 2), mais dans ce cas, les requêtes sont plus complexes pour vérifier la réciprocité. |
+
+### 💡 Recommandé : **Double entrée** pour les amis (comme Facebook).
+
+---
+
+## 🧪 Exemple concret
+
+### Ajout d’amis réciproques :
+
+```sql
+INSERT INTO amis (utilisateur_id, ami_id) VALUES (1, 2), (2, 1);
+```
+
+### Liste des amis de l'utilisateur 1 :
+
+```sql
+SELECT u.*
+FROM users u
+JOIN amis a ON u.id = a.ami_id
+WHERE a.utilisateur_id = 1;
+```
+
+---
+
+## 🧼 Bonus : supprimer un ami
+
+```sql
+DELETE FROM amis
+WHERE (utilisateur_id = 1 AND ami_id = 2)
+   OR (utilisateur_id = 2 AND ami_id = 1);
+```
+
+---
+
+## 🛠️ En résumé
+
+* Oui, tu **crées une table à part** pour gérer les relations d’amis.
+* Ça te permet de :
+
+  * Rechercher les amis facilement.
+  * Gérer l’ajout/suppression.
+  * Éviter les hacks avec des chaînes `VARCHAR` cheloues.
+* C’est le **modèle classique** utilisé dans quasi tous les réseaux sociaux / apps sociales.
+
+---
+
+Dis-moi si tu veux un fichier `.sql` prêt à exécuter pour ça ou un exemple PHP qui utilise cette structure.

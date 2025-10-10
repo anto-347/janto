@@ -1,0 +1,9 @@
+html {
+    --rose: #d87070;
+    --blanc: #FFFAFF;
+}
+
+*::selection {
+    background-color: var(--rose);
+    color: var(--blanc);
+}

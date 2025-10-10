@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="../assets/favicon.png" type="image/png">
+    <script src="script.js" defer></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+<body>
+    <div id="header">
+        <div id="panneau">
+            <a href="index.html"><img src="../assets/logo.png" alt="Logo JanTo" class="logo-header"></a>
+            <h2>JanTo</h2>
+            
+        </div>
+    </div>
+
+    <main>
+        <div id="bloc_apropos">
+            <h2>Deux manières de nous contacter :</h2>
+            <div id="sous_bloc">
+                <div id="formulaire">
+                    <h3>remplissez ce formulaire...</h3>
+                    <form action="https://formsubmit.co/service.janto@gmail.com" method="POST">
+                        <div id="nom">
+                            <label for="name">Votre prénom :</label>
+                            <input type="text" name="name" id="name" required>
+                        </div>
+            
+                        <div id="mail">
+                            <label for="email">Votre email :</label>
+                            <input type="email" name="email" id="email" required>
+                        </div>
+            
+                        <div id="message">
+                            <label for="msg">Votre message :</label>
+                            <textarea name="message" id="msg" required></textarea>
+                        </div>
+            
+                        <div id="accepter_politique">
+                            <label for="politique">Je certifie avoir pris connaissance de la <a href="politique_confidentialité_form.html" target="_blank">politique de confidentialité concernant l'envoi de ce formulaire.</a></label>
+                            <input type="checkbox" name="politique" id="politique" required>
+                        </div>
+
+                        <div id="envoyer">
+                            <button type="submit">Envoyer</button>
+                        </div>
+            
+                    </form>
+                </div>
+
+                <div id="fiche_contact">
+                    <h3>...ou alors envoyez nous un mail</h3>
+                    <p>Envoyez nous un mail à l'adresse suivante : <strong>service.janto@gmail.com</strong> en incluant votre nom, et votre message. <br> Nous ferons de notre mieux pour vous aider au plus vite et de la meilleure des manières !</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>© 2025 Janto. Ce site, son design et son contenu sont protégés par le droit d’auteur. Toute reproduction est interdite sans autorisation.</p>
+        <a href="mentions.html" target="_blank">Mentions légales</a>
+        <a href="politique_confidentialite.html" target="_blank">Politique de confidentialité</a>
+    </footer>
+</body>
+</html>
