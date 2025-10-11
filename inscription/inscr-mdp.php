@@ -34,26 +34,30 @@ $csrf = $_SESSION['csrf_token_inscr_mdp'];
             <form action="loader-mdp-i.php" method="post" id="mdp-form">
                 <h2>Créez votre mot de passe</h2>
                 <div class="mdp-1-div">
-                    <input type="password" name="mdpi1" id="mdpi1">
-                    <label for="mdpi1">Mot de passe</label>
-                    <input type="checkbox" name="aperçu-mdp" id="aperçu-mdp" onclick="mdpi1.type = this.checked ? 'text' : 'password'">
-                    <label for="aperçu-mdp">
+                    <input type="password" name="mdpi1" id="mdpi1" placeholder="" required>
+                    <label for="mdpi1" class="lbl_ipt">Mot de passe</label>
+                    <input type="checkbox" name="tick-aperçu1" id="tick-aperçu1" onclick="mdpi1.type = this.checked ? 'text' : 'password'">
+                    
+                    <label for="tick-aperçu1" class="lbl-aperçu">
                         <i class="fa-solid fa-eye"></i>
                         <i class="fa-solid fa-eye-slash"></i>
-                    </label>
+                   </label>
+
                 </div>
 
                 <p class="result1_r" id="result1_r"></p>
                 <p class="result1_g" id="result1_g"></p>
 
                 <div class="mdp-2-div">
-                    <input type="password" name="mdpi2" id="mdpi2">
-                    <label for="mdpi2">Confirmer votre mot de passe</label>
-                    <input type="checkbox" name="aperçu-mdp2" id="aperçu-mdp2" onclick="mdpi2.type = this.checked ? 'text' : 'password'">
-                    <label for="aperçu-mdp">
+                    <input type="password" name="mdpi2" id="mdpi2" placeholder="" required>
+                    <label for="mdpi2" class="lbl_ipt">Confirmer votre mot de passe</label>
+                    <input type="checkbox" name="tick-aperçu2" id="tick-aperçu2" onclick="mdpi2.type = this.checked ? 'text' : 'password'">
+                    
+                    <label for="tick-aperçu2" class="lbl-aperçu">
                         <i class="fa-solid fa-eye"></i>
                         <i class="fa-solid fa-eye-slash"></i>
                     </label>
+
                 </div>
                 <p class="same_mdp" id="same_mdp"></p>
                 <input type="hidden" name="csrf_token_inscr_mdp" value="<?= htmlspecialchars($csrf) ?>">

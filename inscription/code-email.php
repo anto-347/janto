@@ -30,7 +30,7 @@ $csrf = $_SESSION['csrf_token_code_email'];
 
     <form action="loader-code-email.php" method="post">
         <h2>Vérifiez votre email</h2>
-        <h5>Un code a été envoyé à l'adresse <?php $email ?>, veuillez l'entrer ci-dessous.</h5>
+        <h5>Un code a été envoyé à l'adresse <?php echo $email ?>, veuillez l'entrer ci-dessous.</h5>
         <h4>Ce code est valable pendant 10 minutes, après quoi il sera désactivé.</h4>
         <div>
             <input type="number" name="code" id="code" placeholder="Votre code" require>
