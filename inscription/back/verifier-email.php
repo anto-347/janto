@@ -100,7 +100,7 @@ function insert($email, $pdo) {
 function send_mail($email, $pdo, $code) {
     $mail = new PHPMailer(true);
 
-    $msg = "<strong>Bienvenue sur JanTo !</strong> <br><br><br> Pour vérifier votre email, entrez le code suivant : <br><br> <strong>{$code}</strong> <br><br> Attention, ce code est valable pendant uniquement 10 minutes, après quoi il sera désactivé. <br><br><br> Si vous n'êtes pas à l'origine de cet email, veuillez l'ignorer. <br><br><br><br> Cordialement,<br> L'équipe JanTo<br><a scr='mailto:service.janto@gmail.com'>service.janto@gmail.com</a>";
+    $msg = "<strong>👋 Bienvenue sur JanTo !</strong> <br><br><br> Pour vérifier votre email, entrez le code suivant : <br><br> <strong>{$code}</strong> <br><br> Attention, ce code est valable pendant uniquement 10 minutes, après quoi il sera désactivé. <br><br><br> Si vous n'êtes pas à l'origine de cet email, veuillez l'ignorer. <br><br><br><br> Cordialement,<br> L'équipe JanTo<br><a scr='mailto:service.janto@gmail.com'>service.janto@gmail.com</a>";
 
     try {
         $mail->isSMTP();
