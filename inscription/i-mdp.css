@@ -55,6 +55,7 @@ form {
     border-radius: 25px;
     padding: 2rem;
     width: 60%;
+    background-color: #fff;
 }
 
 input {
@@ -97,14 +98,15 @@ p {
 }
 
 button {
-    margin-top: 2rem;
+    background-color: var(--var-jaune);
+    color: #fff;
     border: none;
     padding: 0.7rem 1rem;
-    background-color: var(--var-gris);
-    color: #fff;
     border-radius: 0.6rem;
     font-weight: 500;
     cursor: pointer;
+    transition: 0.2s;
+    font-size: 16px;
 }
 
 img {
@@ -114,5 +116,76 @@ img {
 
 .mdp-1-div, .mdp-2-div {
     position: relative;
+    display: grid;
 }
 
+.lbl_ipt {
+    background: #fff;
+    position: absolute;
+    top: 1.2rem;
+    left: 15px;
+    padding: 0px 5px;
+    font-size: 12px;
+    transition: 0.3s ease, color 0.3s ease, scale 0.3s ease;
+    transform: translateY(-50%);
+}
+
+input:focus + .lbl_ipt, input:not(:placeholder-shown) + .lbl_ipt {
+    top: -5px;
+    left: -1px;
+    color: var(--var-jaune);
+    transform: scale(0.9);
+}
+
+input:focus, input:not(:placeholder-shown) {
+    border: 1px var(--var-jaune) solid;
+    outline: var(--var-jaune);
+}
+
+#tick-aperçu1, #tick-aperçu2 {
+    display: none;
+}
+
+#tick-aperçu1 + label, #tick-aperçu2 + label {
+    position: absolute;
+    top: 1.2rem;
+    right: 10px;
+}
+
+.lbl-aperçu {
+    font-size: 15px;
+    cursor: pointer;
+    color: var(--var-gris);
+}
+
+#tick-aperçu1 + .lbl-aperçu .fa-eye {
+    display: inline;
+}
+
+#tick-aperçu1 + .lbl-aperçu .fa-eye-slash {
+    display: none;
+}
+
+#tick-aperçu1:checked + .lbl-aperçu .fa-eye {
+    display: none;
+}
+
+#tick-aperçu1:checked + .lbl-aperçu .fa-eye-slash {
+    display: inline;
+}
+
+#tick-aperçu2 + .lbl-aperçu .fa-eye {
+    display: inline;
+}
+
+#tick-aperçu2 + .lbl-aperçu .fa-eye-slash {
+    display: none;
+}
+
+#tick-aperçu2:checked + .lbl-aperçu .fa-eye {
+    display: none;
+}
+
+#tick-aperçu2:checked + .lbl-aperçu .fa-eye-slash {
+    display: inline;
+}
