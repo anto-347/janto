@@ -172,7 +172,7 @@ section {
 }
 
 .form-c.active {
-    transform: translate(50%, -135%);
+    transform: translate(0%, -135%);
 }
 
 .div-input {
@@ -241,7 +241,7 @@ section {
 
 #tick-aperçu + label {
     position: absolute;
-    top: 1.5rem;
+    top: 1.2rem;
     right: 10px;
 }
 
