@@ -41,14 +41,15 @@ function init() {
     $email_array = $_SESSION["form_data"];
     $email = $email_array["email-i"];
 
-    if ($mdp1 === $mdp2 && is_string($mdp1) && is_string($email)) {
+    if ($mdp1 === $mdp2 && $email !== "") {
         save_mdp($email, $mdp1, $mdp2, $pdo);
     } else {
-        if (!is_string($email)) {
-            header("Location: ../../index.html");
+        if ($email === "") {
+            $act = "cr";
+            header("Location: ../inscr-mdp.html?act=" . urlencode($act));
             exit;
         } else {
-            $act = "diff";
+            $act = "df";
             header("Location: ../inscr-mdp.html?act=" . urlencode($act));
             exit;
         }

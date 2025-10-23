@@ -34,16 +34,14 @@ function init() {
     $code_array = $_SESSION['code-email'];
     $code = $code_array["code"];
 
-    $email_array = $_SESSION["form_data"];
-    $email = $email_array["email-i"];
+    $email = $_SESSION['email_user'];
 
 
     check_code($pdo, $code, $email);
 }
 
 function check_code($pdo, $code, $email) {
-    $code = (int)$code;
-    if (!is_int($code)) {
+    if ($code === "") {
         $act = "fa";
         header("Location: ../code-email.php?act=" . urlencode($act));
         exit;

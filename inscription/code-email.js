@@ -13,3 +13,12 @@ const timer = setInterval(function () {
         lien.classList.add("cliquable");
     }
 }, 1000);
+
+let para_in_url = new URLSearchParams(window.location.search);
+let act_in_url = para_in_url.get("act");
+
+if (act_in_url === "wc") {
+    alert("Code erroné, veuillez réessayer.");
+} else if (act_in_url === "fa") {
+    alert("Tous les champs sont requis.");
+}

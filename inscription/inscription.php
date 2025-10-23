@@ -48,14 +48,14 @@ $csrf = $_SESSION['csrf_token_auth'];
                     </div>
                     <input type="hidden" name="csrf_token_auth" value="<?= htmlspecialchars($csrf) ?>">
                     <button type="submit" class="suiv_i">Suivant</button>
-                    <p id="p-in" style="margin: 1rem; color: red;"></p>
+                    
                 </form>
 
 
                 <form action="loader-c.php" method="post" id="form-c" class="form-c">
                     <div class="div-c">
                         <h4>Heureux de vous revoir !</h4>
-                        <p id="p-co" style="margin: 1rem; color: red;"></p>
+                        
                         <div class="div-input">
                             <input type="email" name="email-c" id="email-c" required placeholder="" class="ipt">
                             <label for="email-c" class="lbl">Adresse e-mail</label>
@@ -76,7 +76,7 @@ $csrf = $_SESSION['csrf_token_auth'];
                             </div>
                             <a href="#">Mot de passe oublié</a>
                         </div>
-                        <p id="p-wp" style="margin: 1rem; color: red;"></p>
+                     
 
                         <input type="hidden" name="csrf_token_auth" value="<?= htmlspecialchars($csrf) ?>">
                         <button type="submit">Connexion</button>

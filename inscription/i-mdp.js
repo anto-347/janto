@@ -2,6 +2,16 @@
 
 // CREER ANIM EN ATTENDANT QUE LE DOM CHARGE !!!!
 
+let para_in_url = new URLSearchParams(window.location.search);
+let act_in_url = para_in_url.get("act");
+
+if (act_in_url === "df") {
+    alert("Les mots de passe doivent être identiques.");
+} else if (act_in_url === "cr") {
+    alert("Tous les champs sont requis.");
+}
+
+
 
 const mdp_1_input = document.getElementById("mdpi1");
 const mdp_2_input = document.getElementById("mdpi2");

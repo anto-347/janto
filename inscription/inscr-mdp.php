@@ -6,9 +6,6 @@ if (empty($_SESSION['email_user'])) {
 } else {
     if (empty($_SESSION['csrf_token_inscr_mdp'])) {
         $_SESSION['csrf_token_inscr_mdp'] = bin2hex(random_bytes(32));
-    } else {
-        http_response_code(403);
-        exit;
     }
 }
 $csrf = $_SESSION['csrf_token_inscr_mdp'];

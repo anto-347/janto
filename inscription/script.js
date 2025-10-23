@@ -24,9 +24,7 @@ if (document.body.id === "page-inscription") {
     const form_i = document.getElementById("form-i");
     const img = document.getElementById("logo-div");
     const form = document.getElementById("box-form");
-    const pCO = document.getElementById("p-co");
-    const pIN = document.getElementById("p-in");
-    const pWP = document.getElementById("p-wp");
+ 
 
 
     const para_in_url = new URLSearchParams(window.location.search);
@@ -40,9 +38,9 @@ if (document.body.id === "page-inscription") {
             sessionStorage.clear("action");
             sessionStorage.setItem("action", "co");
             if (act_in_url === "co") {
-                pCO.innerText = "Vous avez déjà un compte, connectez-vous";
+                alert("Vous avez déjà un compte, connectez-vous.");
             } else {
-                pWP.innerText = "Adresse mail ou mot de passe invalide";
+                alert("Adresse email ou mot de passe invalide.");
             }
         } else {
             para_inscription.classList.add("active");
@@ -51,7 +49,7 @@ if (document.body.id === "page-inscription") {
             form.classList.add("left");
             document.title = "JanTo - Inscription";
             sessionStorage.clear("action");
-            pIN.innerText = "Vous n'avez pas encore de compte, inscrivez-vous";
+            alert("Vous n'avez pas encore de compte, inscrivez-vous.");
         }
 
     } else {
