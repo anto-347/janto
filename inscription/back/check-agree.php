@@ -31,12 +31,31 @@ function init() {
     $email = $_SESSION['email_user'];
 
     $array_data = $_POST;
-    $check_agree = $array_data["check_agree_doc"];
-    if ($check_agree === TRUE) {
+  
+    if (isset($array_data["check_agree_doc"])) {
         try {
-            $stmt = $pdo->prepare("UPDATE users SET ")
+            $stmt = $pdo->prepare("UPDATE users SET valide = :validite WHERE email = :email");
+            $stmt->execute([
+                ":validite" => TRUE,
+                ":email" => $email
+            ]);
+            end_to($email);
+        } catch(PDOException $e) {
+            $act = "sd";
+            header("Location: ../i-agree.php?act=" . urlencode($act));
+            exit;
         }
+    } else {
+        $act = "pf";
+        header("Location: ../i-agree.php?act=" . urlencode($act));
+        exit;
     }
+}
+
+function end_to($email) {
+    $_SESSION["inscr-finie"] = [$email => FALSE];
+    header("Location: ../../accueil/accueil.php");
+    exit;
 }
 
 

@@ -2,8 +2,8 @@
 
 // CREER ANIM EN ATTENDANT QUE LE DOM CHARGE !!!!
 
-let para_in_url = new URLSearchParams(window.location.search);
-let act_in_url = para_in_url.get("act");
+const para_in_url = new URLSearchParams(window.location.search);
+const act_in_url = para_in_url.get("act");
 
 if (act_in_url === "df") {
     alert("Les mots de passe doivent être identiques.");

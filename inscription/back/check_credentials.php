@@ -65,7 +65,7 @@ function check_mdp($email, $mdp, $pdo) {
         if (password_verify($mdp, $mdp_in_database)) {
             end_to();
         } else {
-            sleep(3);
+            sleep(5);
             $act = "wp";
             header("Location: ../inscription.php?act=" . urlencode($act));
             exit;
