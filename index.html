@@ -1,108 +1,46 @@
 <!DOCTYPE html>
 <html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JanTo</title>
-    <link rel="stylesheet" href="Main-page/style.css">
-    <script src="Main-page/script.js" defer></script>
-    <script src="inscription/script.js" defer></script>
-    <link rel="shortcut icon" href="assets/favicon.png" type="image/x-icon">
-    <script src="https://kit.fontawesome.com/b2911a96f0.js" crossorigin="anonymous"></script>
-</head>
-<body id="page-principale-index">
-    <div id="header">
-        <div id="panneau">
-            <a href="index.html"><img src="assets/logo.png" alt="Logo JanTo" class="logo-header"></a>
-            <h2>JanTo</h2>
-            <div class="menu-toggle" id="menu-toggle">☰</div>
-        </div>
-        <div class="nav-items" id="nav-items">
-            <button id="connexion-btn" class="connexion-btn">Se connecter</button>
-            <button id="inscription-btn" class="inscription-btn">S'inscrire</button>
-        </div>
-    </div>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>JanTo</title>
+        <link rel="stylesheet" href="Main-page/style.css">
+        <link rel="shortcut icon" href="assets/favicon.png" type="image/x-icon">
+        <script src="https://kit.fontawesome.com/b2911a96f0.js" crossorigin="anonymous"></script>
+    </head>
+    <body>
+        
+        <header>
+            <nav>
+                <img src="assets/logo.png" alt="Logo JanTo">
 
-    <main>
-        <section>
-            <div id="intro">
-                <h2>Bienvenue sur JanTo !</h2>
-                <h3>La meilleure plateforme pour regrouper les services</h3>
-
-                <div class="boutons">
-                    <button onclick="window.location.href='#chercher_service'">Vous demandez service ?</button>
-                    <button onclick="window.location.href='#proposer_service'">Vous proposez vos services ?</button>
-                </div>
-            </div>
-
-            <div id="chercher_service">
-                <h3>Vous demandez service ?</h3>
-
-                <div id="grp_chercher">
-                    <div id="intro_chercher">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium consequatur numquam cum molestias vel sequi quas totam aliquid porro ullam dolores nulla eos possimus, cupiditate impedit. Consequatur, sequi doloribus autem minus hic obcaecati eum voluptatem fugiat numquam tenetur, ducimus veritatis, totam modi eius eveniet impedit repellendus et! Magni ipsa voluptas rerum cupiditate fugit, odio officia aspernatur consectetur totam animi amet, repellendus aut libero hic nam recusandae non dolorum ea iusto, suscipit ut et. Qui rerum illum, eligendi facere ab ut distinctio mollitia adipisci officiis. Dolor dolores minima voluptates aut. Quo.</p>
-                    </div>
-                    <div id="img_chercher">
-                        <img src="assets/chercher_service.png" alt="Demander service">
-                    </div>
-                </div>
-                <div id="racc-inscription">
-                    <button onclick="document.location.href='inscription/inscription.html'" class="btn-go">C'est parti !</button>
-                </div>
-            </div>
-            
-            <div id="proposer_service">
-                <h3>Vous proposez vos services ?</h3>
-
-                <div id="grp_proposer">
-                    <div id="img_proposer">
-                        <img src="assets/proposer_service.png" alt="Proposer service">
-                    </div>
-                    <div id="intro_proposer">
-                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Deleniti commodi quaerat voluptates quod nobis culpa minus nemo velit. Repellendus ratione dignissimos est voluptas illo harum in minima dolorum. Unde est ut facilis maiores optio voluptatum at minus odio! Inventore repudiandae dignissimos aspernatur. Unde pariatur iusto quidem? Voluptatibus esse et beatae, delectus officia cum, rem architecto reiciendis quibusdam recusandae veniam est minima inventore maxime quo libero ex vero obcaecati, dicta laboriosam soluta numquam unde. Neque voluptate ipsa corporis dolorum deleniti quisquam quis perferendis sunt, corrupti consequuntur fuga, impedit adipisci esse reiciendis!</p>
-                    </div>
-                </div>
-                <div id="racc-inscription">
-                    <button onclick="document.location.href='inscription/inscription.html'" class="btn-go">C'est parti !</button>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <footer>
-        <p>© 2025 Janto. Ce site, son design et son contenu sont protégés par le droit d’auteur. Toute reproduction est interdite sans autorisation.</p>
-        <hr>
-        <div class="grp-liens">
-            <div class="liens-juridiques">
-                <h3>Liens utiles</h3>
                 <ul>
-                    <li><a href="Main-page/apropos.html" target="_blank">A propos</a></li>
-                    <li><a href="Main-page/contact.html" target="_blank">Contact</a></li>
-                    <li><a href="juridique/mentions.html" target="_blank">Mentions légales</a></li>
-                    <li><a href="juridique/politique_confidentialite.html" target="_blank">Politique de confidentialité</a></li>
-                    <li><a href="juridique/politique_confidentialité_form.html" target="_blank">Politique de confidentialité (formulaires de contact)</a></li>
-                    <li><a href="juridique/politique-utilisation.html" target="_blank">Politique d'utilisation</a></li>
-                    <li><a href="juridique/clause-non-responsabilite.html" target="_blank">Clause de non-responsabilité</a></li>
-                    <li><a href="juridique/conditions-generales.html" target="_blank">Conditions générales</a></li>
+                    <li>
+                        <button id="btn-inscription">S'INSCRIRE</button>
+                    </li>
+                    <li>
+                        <button id="btn-connexion">SE CONNECTER</button>
+                    </li>
                 </ul>
+            </nav>
+
+            <section>
+                <h1>BIENVENUE SUR JANTO !</h1>
+                <h3>Vos services, votre réussite</h3>
+                <button id="btn-auth">COMMENCER</button>
+            </section>
+        </header>
+
+        <main>
+            <div id="presentation-janto" class="presentation-janto">
+                <div id="icon-sec"><i class="fa-solid fa-lightbulb"></i></div>
+                <h3>QU'EST-CE QUE JANTO</h3>
+                <p>JanTo est une plateforme française qui permet de <strong>mettre en relation</strong> des personnes qui cherchent un service et celles qui en proposent. Simple, rapide, et intuitive, cette plateforme offre un espace sécurisé où chacun peut <strong>favoriser ses compétences, élargir son réseau, et gagner du temps au quotidien.</strong></p>
             </div>
 
-            <div class="liens-reseaux">
-                <h3>Nos réseaux</h3>
-                <ul>
-                    <li><a href="https://www.instagram.com/janto.off/" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-instagram"></i></a></li>
-                    <li><a href="#" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-facebook-f"></i></a></li>
-                </ul>
+            <div id="nos-objectifs" class="nos-objectifs">
+                <div id="icon-sec"></div>
             </div>
-
-            <div class="liens-sup">
-                <h3>Liens supplémentaires</h3>
-                <ul>
-                    <li><a href="#" target="_blank">Notre histoire</a></li>
-                    <li><a href="#" target="_blank">Avis</a></li>
-                </ul>
-            </div>
-        </div>
-    </footer>
-</body>
+        </main>
+    </body>
 </html>

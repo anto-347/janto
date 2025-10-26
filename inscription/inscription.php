@@ -19,6 +19,7 @@ $csrf = $_SESSION['csrf_token_auth'];
     <title></title>
     <link rel="shortcut icon" href="../assets/favicon.png" type="image/x-icon">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style_mobile.css">
     <script src="script.js" defer></script>
     <script src="https://kit.fontawesome.com/b2911a96f0.js" crossorigin="anonymous"></script>
 </head>
