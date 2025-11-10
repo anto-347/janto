@@ -27,14 +27,90 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+    padding: 2rem;
 }
 
 main {
     background-color: var(--var-bg-color);
-    width: calc(var(--var-width-page) - 100px);
-    height: calc(var(--var-height-page) - 100px);
+    width: calc(100vw - 100px);
+    height: calc(100vh - 100px);
     border-radius: 2rem;
     box-shadow: 4px 4px 8px var(--var-gris-clair);
-    
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    gap: 8px;
 }
 
+header {
+    grid-column: span 5 / span 5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.progress-bar-space {
+    width: 40%;
+    height: 3rem;
+    background-color: var(--var-bleu);
+    border-radius: 3rem;
+    box-shadow: 
+        4px 4px 8px var(--var-text-color),
+        -4px 4px 8px var(--var-text-color);
+    margin-top: 2rem;
+    position: relative;
+}
+
+.progress-bar {
+    position: absolute;
+    height: 3rem;
+    width: 15%;
+    background: linear-gradient(to right, var(--var-bleu), var(--var-jaune));
+    border-radius: 3rem;
+}
+
+section {
+    grid-column: span 5 / span 5;
+    grid-row: span 4 / span 4;
+    grid-row-start: 2;
+    position: relative;
+}
+
+form {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    gap: 8px;
+    text-align: center;
+    align-items: center;
+}
+
+h2 {
+    grid-column: span 3 / span 3;
+    grid-column-start: 2;
+    grid-row-start: 2;
+}
+
+#input-text-div {
+    grid-column: span 3 / span 3;
+    grid-column-start: 2;
+    grid-row-start: 3;
+}
+
+#input-text-div #input-text {
+    padding: 0.5rem 0.7rem;
+    border-radius: 1rem;
+    border: 2px var(--var-jaune) solid;
+}
+
+button {
+    grid-column-start: 5;
+    grid-row-start: 4;
+    margin-right: 3rem;
+    padding: 0.7rem;
+    border-radius: 2rem;
+}
