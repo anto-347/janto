@@ -1,11 +1,62 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <script type="module" src="../dist/main.js"></script>
-</body>
-</html>
+<div class="file-upload">
+  <label for="file">Choisir un fichier</label>
+  <input type="file" id="file">
+  <span id="file-name">Aucun fichier choisi</span>
+</div>
+
+<style>
+    body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #FFFAFF;
+  color: #DE8787;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.file-upload {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.file-upload input[type="file"] {
+  display: none; /* On cache l'input natif */
+}
+
+.file-upload label {
+  background-color: #DE8787;
+  color: #FFFAFF;
+  padding: 0.75rem 1.25rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: 600;
+}
+
+.file-upload label:hover {
+  background-color: #c96b6b;
+  transform: translateY(-2px);
+}
+
+#file-name {
+  font-size: 0.95rem;
+  color: #a25b5b;
+  font-style: italic;
+}
+
+</style>
+
+<script>
+
+  const fileInput = document.getElementById('file');
+  const fileName = document.getElementById('file-name');
+
+  fileInput.addEventListener('change', () => {
+    fileName.textContent = fileInput.files.length
+      ? fileInput.files[0].name
+      : 'Aucun fichier choisi';
+  });
+</script>
+

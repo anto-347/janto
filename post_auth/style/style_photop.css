@@ -12,7 +12,7 @@ html {
 .progress-bar {
     position: absolute;
     height: 3rem;
-    width: 16.6%;
+    width: 66.6%;
     background: linear-gradient(to right, var(--var-bleu), var(--var-jaune));
     border-radius: 3rem;
 }
@@ -36,12 +36,26 @@ h2 {
     grid-row-start: 3;
 }
 
+input[type="file"] {
+    display: none;
+}
+
 .submit-btn {
     grid-column-start: 5;
     grid-row-start: 4;
-    margin-right: 3rem;
     padding: 0.7rem;
     border-radius: 2rem;
     opacity: 0.4;
     transition: 80ms ease;
+    margin-right: 3rem;
+}
+
+.skip-btn {
+    grid-column-start: 3;
+    grid-row-start: 4;
+    padding: 0.7rem;
+    border-radius: 2rem;
+    background-color: var(--var-gris);
+    color: var(--var-bleu);
+    border: none;
 }
