@@ -3,8 +3,8 @@
 //config => connexion PDO
 $host = "127.0.0.1";
 $db = "janto-bdd";
-$user = "root";
-$pass = "";
+$user = "admin";
+$pass = "Ant3437!";
 $charset = "utf8mb4";
 
 $dsn = "mysql:host=$host;dbname=$db;charset=$charset";
