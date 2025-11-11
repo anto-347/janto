@@ -47,13 +47,13 @@ h2 {
     text-align: center;
     border: 2px var(--var-jaune) solid;
     transition: 80ms ease;
+    opacity: 0.4;
 }
 
 #input-text-div > input:focus {
     transform: translateY(-5px);
     outline: none;
-    
-
+    opacity: 1;
 }
 
 #input-text-div > span {
