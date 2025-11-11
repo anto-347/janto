@@ -12,7 +12,7 @@ html {
 .progress-bar {
     position: absolute;
     height: 3rem;
-    width: 66.6%;
+    width: 83.3%;
     background: linear-gradient(to right, var(--var-bleu), var(--var-jaune));
     border-radius: 3rem;
 }
@@ -34,43 +34,38 @@ h2 {
     grid-column: span 3 / span 3;
     grid-column-start: 2;
     grid-row-start: 3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-input[type="file"] {
-    display: none;
+#input-text-div > input {
+    width: 3rem;
+    margin: 0.2rem;
+    border-radius: 1rem;
+    height: 3rem;
+    text-align: center;
+    border: 2px var(--var-jaune) solid;
+    transition: 80ms ease;
 }
 
-label {
-    background-color: #DE8787;
-    color: #FFFAFF;
-    padding: 0.75rem 1.25rem;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    font-weight: 600;   
+#input-text-div > input:focus {
+    transform: translateY(-5px);
+    outline: none;
+    
+
 }
 
-label:hover {
-    background-color: #c96b6b;
-    transform: translateY(-2px);
+#input-text-div > span {
+    font-size: 2rem;
 }
 
 .submit-btn {
     grid-column-start: 5;
     grid-row-start: 4;
+    margin-right: 3rem;
     padding: 0.7rem;
     border-radius: 2rem;
     opacity: 0.4;
     transition: 80ms ease;
-    margin-right: 3rem;
-}
-
-.skip-btn {
-    grid-column-start: 3;
-    grid-row-start: 4;
-    padding: 0.7rem;
-    border-radius: 2rem;
-    background-color: var(--var-gris);
-    color: var(--var-bleu);
-    border: none;
 }
