@@ -34,9 +34,10 @@ function init() {
   
     if (isset($array_data["check_agree_doc"])) {
         try {
-            $stmt = $pdo->prepare("UPDATE users SET valide = :validite WHERE email = :email");
+            $stmt = $pdo->prepare("UPDATE users SET valide = :validite, complet = :complet WHERE email = :email");
             $stmt->execute([
-                ":validite" => TRUE,
+                ":validite" => 1,
+                ":complet" => 0,
                 ":email" => $email
             ]);
             end_to($email);

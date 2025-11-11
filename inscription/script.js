@@ -114,7 +114,7 @@ if (document.body.id === "page-inscription") {
         sec.style.setProperty("--var-width-sec", `${width}px`);
     }
 
-    send_width()
+    send_width();
 
     window.addEventListener("resize", send_width);
 }
