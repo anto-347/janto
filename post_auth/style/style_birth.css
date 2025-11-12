@@ -56,6 +56,11 @@ h2 {
     opacity: 1;
 }
 
+#input-text-div > input.filled {
+    outline: none;
+    opacity: 1;
+}
+
 #input-text-div > span {
     font-size: 2rem;
 }
