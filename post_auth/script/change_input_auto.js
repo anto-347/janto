@@ -9,7 +9,7 @@ const input8_field = document.getElementById("année-u");
 
 const bouton = document.getElementById("submit-btn");
 
-input1_field.addEventListener("input", function() {
+input1_field.addEventListener('input', function() {
     const input1 = input1_field.value;
     const restrictions_ipt1 = input1 === "0" || input1 === "1" || input1 === "2" || input1 === "3";
 
@@ -30,7 +30,7 @@ input1_field.addEventListener("input", function() {
     }
 })
 
-input2_field.addEventListener("input", function() {
+input2_field.addEventListener('input', function() {
     const input2 = input2_field.value;
     const restrictions_ipt2 = /\d/.test(input2);
 
@@ -52,3 +52,8 @@ input2_field.addEventListener("input", function() {
     } 
 })
 
+document.addEventListener('keydown', function(e) {
+    if (e.key === 'Delete') {
+        
+    }
+})
