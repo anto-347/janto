@@ -52,8 +52,8 @@ input2_field.addEventListener('input', function() {
     } 
 })
 
-document.addEventListener('keydown', function(e) {
-    if (e.key === 'Delete') {
-        
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'Backspace') {
+        delete_car();
     }
 })
