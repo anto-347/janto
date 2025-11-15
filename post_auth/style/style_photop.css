@@ -12,7 +12,7 @@ html {
 .progress-bar {
     position: absolute;
     height: 3rem;
-    width: 66.6%;
+    width: 80%;
     background: linear-gradient(to right, var(--var-bleu), var(--var-jaune));
     border-radius: 3rem;
 }
