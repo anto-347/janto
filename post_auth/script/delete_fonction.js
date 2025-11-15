@@ -2,59 +2,40 @@ function delete_car() {
     const element_focus = document.activeElement;
     const element_id = element_focus.id;
 
-    console.log("delete car");
+    const lst_ipt = [
+        input1_field,
+        input2_field,
+        input3_field,
+        input4_field,
+        input5_field,
+        input6_field,
+        input7_field,
+        input8_field
+    ]
 
-    if (element_id === "jour-d") {
-        from_ipt1(element_id);
-    } else if (element_id === "jour-u") {
-        from_ipt2(element_id);
-    } else if (element_id === "mois-d") {
-        from_ipt3(element_id);
-    } else if (element_id === "mois-u") {
-        from_ipt4(element_id);
-    } else if (element_id === "année-m") {
-        from_ipt5(element_id);
-    } else if (element_id === "année-c") {
-        from_ipt6(element_id);
-    } else if (element_id === "année-d") {
-        from_ipt7(element_id);
-    } else if (element_id === "année-u") {
-        from_ipt8(element_id);
+    console.log("in function");
+    let after = false;
+
+    for (let i = 0; i < lst_ipt.length; i++) {
+        let ipt = lst_ipt[i];
+        if (ipt.id === element_id) {
+            var id_element = i;
+            after = true;
+        } else if (after) {
+            if (ipt.classList.contains("filled")) {
+                ipt.value = "";
+                ipt.classList.remove("filled");
+            }
+        }
     }
-}
 
-function from_ipt1(element_id) {
-    let bool = true;
-
-    while (bool) {
-        
+    if (lst_ipt[id_element].classList.contains("filled")) {
+        lst_ipt[id_element].classList.remove("filled");
     }
-}
+    lst_ipt[id_element].value = "";
+    lst_ipt[id_element - 1].focus();
 
-function from_ipt2(element_id) {
-    
-}
-
-function from_ipt3(element_id) {
-    
-}
-
-function from_ipt4(element_id) {
-    
-}
-
-function from_ipt5(element_id) {
-    
-}
-
-function from_ipt6(element_id) {
-    
-}
-
-function from_ipt7(element_id) {
-
-}
-
-function from_ipt8(element_id) {
-    
+    if (bouton.classList.contains("clic")) {
+        bouton.classList.remove("clic");
+    }
 }

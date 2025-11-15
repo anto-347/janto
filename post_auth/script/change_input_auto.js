@@ -9,7 +9,7 @@ const input8_field = document.getElementById("année-u");
 
 const bouton = document.getElementById("submit-btn");
 
-input1_field.addEventListener('input', function() {
+input1_field.addEventListener('input', () => {
     const input1 = input1_field.value;
     const restrictions_ipt1 = input1 === "0" || input1 === "1" || input1 === "2" || input1 === "3";
 
@@ -25,12 +25,15 @@ input1_field.addEventListener('input', function() {
         }
     }
 
-    if (input1 == "") {
+    if (
+        input1 == "" &&
+        input1_field.classList.contains("filled")
+    ) {
         input1_field.classList.remove("filled");
     }
 })
 
-input2_field.addEventListener('input', function() {
+input2_field.addEventListener('input', () => {
     const input2 = input2_field.value;
     const restrictions_ipt2 = /\d/.test(input2);
 
@@ -47,9 +50,112 @@ input2_field.addEventListener('input', function() {
         }
     }
 
-    if (input2 == "") {
+    if (
+        input2 == "" &&
+        input2_field.classList.contains("filled")
+    ) {
         input2_field.classList.remove("filled");
     } 
+})
+
+input3_field.addEventListener('input', () =>{
+    const input3 = input3_field.value;
+    const restrictions_ipt3 = input3 === "0" || input3 === "1";
+
+    if (
+        input2_field.classList.contains("filled") &&
+        input3 !== "" &&
+        restrictions_ipt3
+    ) {
+        input4_field.focus();
+        input3_field.classList.add("filled");
+    } else {
+        if (!restrictions_ipt3) {
+            input3_field.value = "";
+        }
+    }
+
+    if (
+        input3 == "" && 
+        input3_field.classList.contains("filled")
+    ) {
+        input3_field.classList.remove("filled");
+    }
+})
+
+input4_field.addEventListener('input', () => {
+    const input4 = input4_field.value;
+    const restrictions_ipt4 = /\d/.test(input4);
+
+    if (
+        input3_field.classList.contains("filled") &&
+        input4 !== "" &&
+        restrictions_ipt4
+    ) {
+        input5_field.focus();
+        input4_field.classList.add("filled");
+    } else {
+        if (!restrictions_ipt4) {
+            input4_field.value = "";
+        }
+    }
+
+    if (
+        input4 == "" &&
+        input4_field.classList.contains("filled")
+    ) {
+        input4_field.classList.remove("filled");
+    }
+})
+
+input5_field.addEventListener('input', () => {
+    const input5 = input5_field.value;
+    const restrictions_ipt5 = input5 === "1" || input5 === "2";
+
+    if (
+        input4_field.classList.contains("filled") &&
+        input5 !== "" &&
+        restrictions_ipt5
+    ) {
+        input6_field.focus();
+        input5_field.classList.add("filled");
+    } else {
+        if (!restrictions_ipt5) {
+            input5_field.value = "";
+        }
+    }
+
+    if (
+        input5 == "" &&
+        input5_field.classList.contains("filled")
+    ) {
+        input5_field.classList.remove("filled");
+    }
+})
+
+input6_field.addEventListener('input', () => {
+    const input6 = input6_field.value;
+    const restrictions_ipt6 = /\d/.test(input4);
+
+    if (
+        input5_field.classList.contains("filled") &&
+        input6 !== "" &&
+        restrictions_ipt6
+    ) {
+        input7_field.focus();
+        input6_field.classList.add("filled");
+    } else {
+        if (!restrictions_ipt6) {
+            input6_field.value = "";
+        }
+    }
+
+    if (
+        input6 == "" &&
+        input6_field.classList.contains("filled")
+    ) {
+        input6_field.classList.remove("filled");
+    }
 })
 
 document.addEventListener('keydown', (e) => {
