@@ -135,7 +135,7 @@ input5_field.addEventListener('input', () => {
 
 input6_field.addEventListener('input', () => {
     const input6 = input6_field.value;
-    const restrictions_ipt6 = /\d/.test(input4);
+    const restrictions_ipt6 = input6 === "0" || input6 === "9";
 
     if (
         input5_field.classList.contains("filled") &&
@@ -158,8 +158,65 @@ input6_field.addEventListener('input', () => {
     }
 })
 
+input7_field.addEventListener('input', () => {
+    const input7 = input7_field.value;
+    const restrictions_ipt7 = /\d/.test(input7);
+
+    if (
+        input6_field.classList.contains("filled") &&
+        input7 !== "" &&
+        restrictions_ipt7
+    ) {
+        input8_field.focus();
+        input7_field.classList.add("filled");
+    } else {
+        if (!restrictions_ipt7) {
+            input7_field.value = "";
+        }
+    }
+
+    if (
+        input7 == "" &&
+        input7_field.classList.contains("filled")
+    ) {
+        input7_field.classList.remove("filled");
+    }
+})
+
+input8_field.addEventListener('input', () => {
+    const input8 = input8_field.value;
+    const restrictions_ipt8 = /\d/.test(input8);
+
+    if (
+        input7_field.classList.contains("filled") &&
+        input8 !== "" &&
+        restrictions_ipt8
+    ) {
+        input8_field.blur();
+        bouton.classList.add("clic");
+        input8_field.classList.add("filled");
+    } else {
+        if (!restrictions_ipt8) {
+            input8_field.value = "";
+        }
+    }
+
+    if (
+        input8 == "" &&
+        input8_field.classList.contains("filled")
+    ) {
+        input8_field.classList.remove("filled");
+    }
+})
+
 document.addEventListener('keydown', (e) => {
     if (e.key === 'Backspace') {
         delete_car();
+    }
+})
+
+bouton.addEventListener('click', (e) => {
+    if (!bouton.classList.contains("clic")) {
+        e.preventDefault();
     }
 })
